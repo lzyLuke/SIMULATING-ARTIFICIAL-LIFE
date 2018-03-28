@@ -6,7 +6,7 @@
 
 这是我在Cornell里的CS2112 Object Oriented Programming and Data Structures for Honors课上做的一个项目,呃,是一个比较好玩的东西，但我很难把它描述成一个实际的东西。。。但想了想，应该可以说是一个游戏吧。总单来说就是在一个自己构建的地图上放置可以用自己定义的语言编程的机器人一样的模拟器。。。
 
-##1 图形化界面基本样式
+## 1 图形化界面基本样式
 
 图形化界面是使用JAVA SceneBuilder构建的。
 
@@ -23,7 +23,7 @@
 ![4](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/4.png)
 ![5](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/5.png)
 
-##2 生物部分描述（程序语言）
+## 2 生物部分描述（程序语言）
 
 程序语言语法树如下：
 ![syntaxTree](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/syntaxTree.png)
@@ -57,7 +57,7 @@ nearby[0] > 0 and nearby[3] = 0 --> backward;
 除了生物本身可以根据当前环境（其能感受到部分周围的格子的信息）进行本身的转向或移动以外，还能进行对其他生物的攻击，自身的防御。值得一提的是，生物可以进行繁殖，是两个同样种类面对面进行，如若繁殖成功，子代首先会各取父母一半的基因（一半的程序），然后会有一定的概率发生自身基因的变异（Mutation），变异的过程是首先读入基因，构造出语法树，然后随机替换语法树上的某些节点成某些语法子树或另外的叶子节点。这样就模拟了生物的基因变异。
 
 
-##3 分布式C/S服务器
+## 3 分布式C/S服务器
 
 除了编译器这一部分以外，另一个比较Challenge的地方是分布式实现，实现一个C/S模型，把程序分为服务器端和客户端。
 
