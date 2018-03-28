@@ -9,16 +9,17 @@
 图形化界面是使用JAVA SceneBuilder构建的。
 
 右边的左Panel，用来显示当前格子（鼠标可选择的）生物的状态，包括它的基因，目前各项数值，上一步执行的哪一条语句：
-
+![1](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/1.png)
 右边的中Panel，用来显示当前格子是石头还是食物etc....
-
+![2](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/2.png)
 右边的右Panel，用来显示一些配置，可以自己读入一个新世界，随机生成世界，读入一个生物文件，放置一个生物，调整世界流逝时间速度等...
-
+![3](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/3.png)
 右上方的+，-号可以用来动态调整格子的大小（同时会重新绘制整个画面）。
-
+![4](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/4.png)
+![5](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/5.png)
 ##2 生物部分描述（程序语言）
 程序语言语法树如下：
-
+![syntaxTree](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/syntaxTree.png)
 
 
 
