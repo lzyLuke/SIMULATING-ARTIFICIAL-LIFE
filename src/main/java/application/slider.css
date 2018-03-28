@@ -1,0 +1,15 @@
+.slider .thumb
+{
+-fx-background-color:   #EDA678;
+
+}
+.slider .track
+{
+-fx-background-color:   #EDA678;
+}
+
+.scrollPane
+{
+	-fx-background-color: transparent;
+	-fx-background:transparent;
+}

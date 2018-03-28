@@ -1,0 +1,31 @@
+species:spiral
+memsize:15
+defense:999
+offense:999
+size:1
+energy:50000
+posture:17
+//startround = mem[8]
+//newround = mem[9]
+//roundnumber = mem[10]
+//turncount = mem[11]
+//forwardtimes = mem[12]
+//turnleft = mem[13]
+//turnright = mem[14]
+//startround = 0 --> startround=1 newround=1 roundnumber = -1 turntimes=6 forward
+//newround = 1 --> newround = 0 roundnumer = roundnumber + 1 turncount = 6 forwardtimes = 0 turnleft = 1 turnright = 0 left
+//forwardtimes = 0 and turntimes > 0 and turnleft = 1 --> turleft = 0 left
+//forwardtimes = 0 and turntimes > 0 and turnleft = 0 --> turnleft = 1 turnimes = turntimes - 1 forwardtimes = roundnumber forward
+//forwardtimes > 0 --> forwardtimes = forwardtimes - 1 forward
+//turnright = 0 --> turnright = 1 right
+//turnright = 1 --> turnright = 0 newround = 1 forward
+mem[4] <= 3 --> wait;
+ahead[1] < -1 --> eat;
+mem[8] = 0 --> mem[8] := 1 mem[9] := 1 mem[10] := -1 mem[11] := 6 forward;
+mem[9] = 1 --> mem[9] := 0 mem[10] := mem[10] + 1 mem[11] := 6 mem[12] := 0 mem[13] := 1 mem[14] := 0 left;
+mem[12] = 0 and mem[11] > 0 and mem[13] = 1 --> mem[13] := 0 left;
+mem[12] = 0 and mem[11] > 0 and mem[13] = 0 --> mem[13] := 1 mem[11] := mem[11] - 1 mem[12] := mem[10] forward;
+mem[12] > 0 --> mem[12] := mem[12] - 1 forward;
+mem[14] = 0 --> mem[14] := 1 right;
+mem[14] = 1 --> mem[14] := 0 mem[9] := 1 forward;
+

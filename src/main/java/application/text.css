@@ -1,0 +1,35 @@
+.jfx-text-field{
+    -fx-text-fill: #e4d6d6;
+    -fx-background-color:transparent;
+	-fx-font-family:Arial;
+	-fx-font-size:10px;
+	-fx-font-weight:bold;
+}
+.jfx-text-area:readonly
+{
+	-fx-text-fill: #e4d6d6;
+    -fx-background-color:transparent;
+	-fx-font-family:Arial;
+	-fx-font-size:10px;
+	-fx-font-weight:bold;
+}
+.jfx-text-area
+{
+	-fx-text-fill: #e4d6d6;
+    -fx-background-color:transparent;
+	-fx-font-family:Arial;
+	-fx-font-size:10px;
+	-fx-font-weight:bold;
+}
+.text-field
+{
+	-fx-text-fill: #e4d6d6;
+    -fx-background-color:transparent;
+	-fx-font-family:Arial;
+	-fx-font-size:10px;
+	-fx-font-weight:bold;
+	-fx-border-style:solid;
+	-fx-border-width:0 0 1 0;
+	-fx-border-color:white;
+
+}

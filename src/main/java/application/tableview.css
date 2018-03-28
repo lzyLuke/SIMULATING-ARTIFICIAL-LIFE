@@ -1,0 +1,13 @@
+.table-view:row-selection .column-header-background .nested-column-header .table-column .label .text
+{
+	-fx-fill:  rgba(181, 181, 181, 1);
+}
+.table-view:row-selection .column-header-background .nested-column-header .table-column .label .text
+{
+	-fx-font-size: 12px;
+}
+.table-view:row-selection .column-header-background .nested-column-header .table-column
+{
+	-fx-background-color: #3D4956;
+	-fx-text-aligenment:right;
+}

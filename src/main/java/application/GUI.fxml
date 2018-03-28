@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="850.0" style="-fx-background-color: rgba(59, 59, 59, 1);" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GUIController">
+   <children>
+      <ScrollPane fx:id="scrollPane" layoutY="58.0" prefHeight="450.0" prefWidth="542.0" style="-fx-background: transparent; -fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="308.0" AnchorPane.topAnchor="60.0" />
+      <AnchorPane layoutX="566.0" layoutY="-212.0" prefHeight="515.0" prefWidth="309.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="60.0" prefWidth="308.0" style="-fx-background-color: #3D4956;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane fx:id="hover3" layoutX="206.0" opacity="0.13" prefHeight="60.0" prefWidth="103.0" style="-fx-background-color: black;" visible="false" />
+                  <AnchorPane fx:id="hover1" opacity="0.18" prefHeight="60.0" prefWidth="103.0" style="-fx-background-color: black;" visible="false" />
+                  <AnchorPane fx:id="hover2" layoutX="103.0" opacity="0.13" prefHeight="60.0" prefWidth="103.0" style="-fx-background-color: black;" visible="false" />
+                  <ImageView fx:id="critter" fitHeight="39.0" fitWidth="32.0" layoutX="34.0" layoutY="13.0" onMouseClicked="#handleIconClick" onMouseEntered="#handleHoverInAction" onMouseExited="#handleHoverOutAction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icons8-frog.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="map" fitHeight="39.0" fitWidth="32.0" layoutX="140.0" layoutY="13.0" onMouseClicked="#handleIconClick" onMouseEntered="#handleHoverInAction" onMouseExited="#handleHoverOutAction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icons8-marker.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="setting" fitHeight="39.0" fitWidth="32.0" layoutX="243.0" layoutY="13.0" onMouseClicked="#handleIconClick" onMouseEntered="#handleHoverInAction" onMouseExited="#handleHoverOutAction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icons8-settings.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane layoutX="1.0" layoutY="57.0" minHeight="0.0" minWidth="0.0" prefHeight="7.0" prefWidth="308.0" style="-fx-background-color: #EDA678;" AnchorPane.leftAnchor="0.0">
+               <children>
+                  <ImageView fx:id="arrow2" fitHeight="25.0" fitWidth="25.0" layoutX="144.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@image/icons8-sort_down_filled.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="arrow3" fitHeight="25.0" fitWidth="25.0" layoutX="246.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icons8-sort_down_filled.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="arrow1" fitHeight="31.0" fitWidth="25.0" layoutX="39.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@image/icons8-sort_down_filled.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1.0" layoutY="64.0" prefHeight="314.0" prefWidth="308.0" style="-fx-background-color: #3D4956;">
+               <children>
+                  <AnchorPane fx:id="critterPane" prefHeight="308.0" prefWidth="308.0" style="-fx-background-color: transparent;" visible="false">
+                     <children>
+                        <AnchorPane layoutX="21.0" layoutY="17.0" prefHeight="274.0" prefWidth="267.0" stylesheets="@TextPane.css">
+                           <children>
+                              <GridPane prefHeight="308.0" prefWidth="312.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.03887939453125" minWidth="10.0" prefWidth="96.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.11456298828125" minWidth="10.0" prefWidth="212.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="61.23107147216797" minHeight="10.0" prefHeight="31.269927978515625" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="99.41725158691406" minHeight="0.0" prefHeight="31.732093811035156" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="179.49496459960938" minHeight="0.0" prefHeight="86.26790618896484" valignment="TOP" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="179.49496459960938" minHeight="0.0" prefHeight="105.0" valignment="TOP" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="179.49496459960938" minHeight="10.0" prefHeight="41.0" valignment="TOP" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="4.0" prefWidth="50.0" text=" SPECIES:" textFill="#e8dbdb">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label prefHeight="3.0" prefWidth="62.0" text=" LOCATION: " textFill="#e8dbdb" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="39.0" text=" STATE:" textFill="#e8dbdb" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label prefHeight="0.0" prefWidth="51.0" text=" GENOME:" textFill="#e8dbdb" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" top="6.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label prefHeight="3.0" prefWidth="52.0" text=" RULE:" textFill="#e8dbdb" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <JFXTextArea fx:id="memoryText" editable="false" focusColor="#405aa800" prefHeight="27.0" prefWidth="192.0" stylesheets="@text.css" text="N/A&#10;" unFocusColor="#4d4d4d00" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets top="5.0" />
+                                       </GridPane.margin>
+                                    </JFXTextArea>
+                                    <JFXTextField fx:id="speciesText" editable="false" focusColor="#405aa800" stylesheets="@showtext.css" text="N/A" unFocusColor="#4d4d4d00" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets top="5.0" />
+                                       </GridPane.margin>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="locationText" editable="false" focusColor="#405aa800" stylesheets="@showtext.css" text="N/A" unFocusColor="#4d4d4d00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <JFXTextArea fx:id="genomeText" editable="false" focusColor="#405aa800" stylesheets="@text.css" text="N/A" unFocusColor="#4d4d4d00" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </JFXTextArea>
+                                    <JFXTextArea fx:id="ruleText" editable="false" focusColor="#405aa800" stylesheets="@text.css" text="N/A" unFocusColor="#4d4d4d00" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets top="5.0" />
+                                       </GridPane.margin>
+                                    </JFXTextArea>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="settingPane" layoutY="2.0" prefHeight="304.0" prefWidth="308.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <Separator layoutX="17.0" layoutY="147.0" prefHeight="2.0" prefWidth="274.0" />
+                        <GridPane layoutX="36.0" layoutY="7.0" prefHeight="125.0" prefWidth="255.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="203.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="52.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXButton fx:id="loadWorld" onMouseClicked="#loadNewWorld" prefHeight="20.0" prefWidth="110.0" stylesheets="@button.css" text="LOAD WORLD" />
+                              <JFXButton onMouseClicked="#initializeRandomWorld" prefHeight="20.0" prefWidth="110.0" stylesheets="@button.css" text="RANDOM WORLD" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial Bold" size="10.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="loadCritter" onMouseClicked="#loadNewCritter" prefHeight="20.0" prefWidth="110.0" stylesheets="@button.css" text="LOAD CRITTER" GridPane.rowIndex="2" />
+                              <ImageView fx:id="loadCritterEr" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@image/icons8-close_window.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="loadCritterOk" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@image/icons8-checked.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="randomWorldOk" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@image/icons8-checked.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="randomWorldEr" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@image/icons8-close_window.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="loadWorldEr" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                                 <image>
+                                    <Image url="@image/icons8-close_window.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="loadWorldOk" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1">
+                                 <image>
+                                    <Image url="@image/icons8-checked.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                        <JFXButton fx:id="addCritter" layoutX="36.0" layoutY="262.0" onMouseClicked="#addNewCritter" prefHeight="20.0" prefWidth="110.0" stylesheets="@button.css" text="ADD CRITTER" />
+                        <ImageView fx:id="addCritterOk" fitHeight="20.0" fitWidth="20.0" layoutX="241.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@image/icons8-checked.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="addCritterEr" fitHeight="20.0" fitWidth="20.0" layoutX="241.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/icons8-close_window.png" />
+                           </image>
+                        </ImageView>
+                        <GridPane layoutX="43.0" layoutY="182.0" prefHeight="57.0" prefWidth="240.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="57.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="40.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="145.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="33.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text fill="#e4d6d6" strokeType="OUTSIDE" strokeWidth="0.0" text="COLUMN">
+                                 <font>
+                                    <Font name="Arial Bold" size="10.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="ColumnNumber" alignment="CENTER" prefHeight="26.0" prefWidth="39.0" stylesheets="@text.css" text="0" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Text fill="#e4d6d6" strokeType="OUTSIDE" strokeWidth="0.0" text="ROW" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial Bold" size="10.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="RowNumber" alignment="CENTER" prefHeight="26.0" prefWidth="39.0" stylesheets="@text.css" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <JFXToggleButton fx:id="randomToggleButton" prefHeight="58.0" prefWidth="145.0" text="RANDOM LOC" textFill="#eee4e4" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font name="Arial Bold" size="10.0" />
+                                 </font>
+                              </JFXToggleButton>
+                              <AnchorPane prefHeight="28.0" prefWidth="164.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <Text fill="#e4d6d6" layoutX="20.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NUM">
+                                       <font>
+                                          <Font name="Arial Bold" size="10.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="NumNumber" alignment="CENTER" layoutX="67.0" prefHeight="26.0" prefWidth="39.0" stylesheets="@text.css" text="1">
+                                       <font>
+                                          <Font name="Arial Bold" size="12.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="mapPane" prefHeight="297.0" prefWidth="308.0" style="-fx-background-color: #3D4956;" visible="false" AnchorPane.rightAnchor="-1.0">
+                     <children>
+                        <AnchorPane layoutX="42.0" layoutY="95.0" prefHeight="137.0" prefWidth="224.0" stylesheets="@TextPane.css">
+                           <children>
+                              <GridPane layoutY="6.0" prefHeight="125.0" prefWidth="224.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="16.0" prefWidth="61.0" style="-fx-text-fill: #e8dbdb;" text="Column:" textFill="#e8dbdb">
+                                       <font>
+                                          <Font name="Arial Bold" size="11.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="15.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label prefHeight="16.0" prefWidth="61.0" style="-fx-text-fill: #e8dbdb;" text="Row:" textFill="#e8dbdb" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Arial Bold" size="11.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="15.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label prefHeight="16.0" prefWidth="69.0" style="-fx-text-fill: #e8dbdb;" text="Property:" textFill="#e8dbdb" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Arial Bold" size="11.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="15.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label prefHeight="16.0" prefWidth="97.0" style="-fx-text-fill: #e8dbdb;" text="Food:" textFill="#e8dbdb" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Arial Bold" size="11.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="showWorldColumnText" prefHeight="16.0" prefWidth="61.0" style="-fx-text-fill: #e8dbdb;" text="N/A" textFill="#e8dbdb" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font name="Arial Bold" size="11.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="showWorldRowText" prefHeight="16.0" prefWidth="61.0" style="-fx-text-fill: #e8dbdb;" text="N/A" textFill="#e8dbdb" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Arial Bold" size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="showWorldPropertyText" prefHeight="16.0" prefWidth="61.0" style="-fx-text-fill: #e8dbdb;" text="N/A" textFill="#e8dbdb" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Arial Bold" size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="showWorldFoodText" prefHeight="16.0" prefWidth="61.0" style="-fx-text-fill: #e8dbdb;" text="N/A" textFill="#e8dbdb" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Arial Bold" size="11.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1.0" layoutY="375.0" minHeight="0.0" minWidth="0.0" prefHeight="6.0" prefWidth="308.0" style="-fx-background-color: #EDA678;" AnchorPane.leftAnchor="0.0" />
+            <AnchorPane layoutX="1.0" layoutY="381.0" prefHeight="137.0" prefWidth="308.0" style="-fx-background-color: #3D4956;" AnchorPane.bottomAnchor="-3.0">
+               <children>
+                  <Label layoutX="38.0" layoutY="25.0" style="-fx-text-fill: #e8dbdb;" text="SIMULATION SPEED" textFill="#e8dbdb">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="start" fitHeight="39.0" fitWidth="39.0" layoutX="78.0" layoutY="82.0" onMouseClicked="#handleIconClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icons8-play.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="pause" fitHeight="39.0" fitWidth="31.0" layoutX="82.0" layoutY="86.0" onMousePressed="#handleIconClick" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@image/icons8-pause.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <JFXSlider fx:id="slider" layoutX="34.0" layoutY="55.0" onMouseClicked="#handleDragAction" onMouseDragReleased="#handleDragAction" onMouseReleased="#handleDragAction" prefHeight="16.0" prefWidth="255.0" stylesheets="@slider.css" />
+                  <JFXButton fx:id="addCritter1" layoutX="179.0" layoutY="91.0" onMouseClicked="#advanceOnce" prefHeight="20.0" prefWidth="100.0" stylesheets="@button.css" text="ADVANCE ONCE" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-8.0" layoutY="-3.0" prefHeight="57.0" prefWidth="542.0" style="-fx-background-color: #444649;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="308.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="19.0" layoutY="25.0" style="-fx-text-fill: #e8dbdb;" text="TOTAL STEPS:" textFill="#e8dbdb">
+               <font>
+                  <Font name="Arial Bold" size="11.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="numTimeSteps" editable="false" focusColor="#e9ecf500" layoutX="105.0" layoutY="19.0" prefHeight="9.0" prefWidth="63.0" style="-fx-text-fill: #e8dbdb;" text="0" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="207.0" layoutY="25.0" prefHeight="16.0" prefWidth="125.0" style="-fx-text-fill: #e8dbdb;" text="CRITTERS ALIVE:" textFill="#e8dbdb">
+               <font>
+                  <Font name="Arial Bold" size="11.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="numCrittersAlive" editable="false" focusColor="#405aa800" layoutX="312.0" layoutY="18.0" prefHeight="27.0" prefWidth="53.0" style="-fx-text-fill: #e8dbdb;" text="0" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="zoomIn" layoutX="421.0" layoutY="16.0" onMouseClicked="#zoomIn" prefHeight="30.0" prefWidth="30.0" stylesheets="@zoomButton.css" text="+" AnchorPane.rightAnchor="90.0" />
+            <JFXButton fx:id="zoomOut" layoutX="474.0" layoutY="17.0" onMouseClicked="#zoomOut" prefHeight="30.0" prefWidth="30.0" stylesheets="@zoomButton.css" text="-" AnchorPane.rightAnchor="38.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
