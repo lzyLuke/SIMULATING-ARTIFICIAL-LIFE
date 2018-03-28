@@ -5,7 +5,9 @@
 ------
 
 这是我在Cornell里的CS2112 Object Oriented Programming and Data Structures for Honors课上做的一个项目,呃,是一个比较好玩的东西，但我很难把它描述成一个实际的东西。。。但想了想，应该可以说是一个游戏吧。总单来说就是在一个自己构建的地图上放置可以用自己定义的语言编程的机器人一样的模拟器。。。
+
 ##1 图形化界面基本样式
+
 图形化界面是使用JAVA SceneBuilder构建的。
 
 右边的左Panel，用来显示当前格子（鼠标可选择的）生物的状态，包括它的基因，目前各项数值，上一步执行的哪一条语句：
@@ -20,7 +22,9 @@
 右上方的+，-号可以用来动态调整格子的大小（同时会重新绘制整个画面）。
 ![4](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/4.png)
 ![5](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/5.png)
+
 ##2 生物部分描述（程序语言）
+
 程序语言语法树如下：
 ![syntaxTree](https://github.com/lzyLuke/SIMULATING-ARTIFICIAL-LIFE/blob/master/pics/syntaxTree.png)
 
@@ -54,6 +58,7 @@ nearby[0] > 0 and nearby[3] = 0 --> backward;
 
 
 ##3 分布式C/S服务器
+
 除了编译器这一部分以外，另一个比较Challenge的地方是分布式实现，实现一个C/S模型，把程序分为服务器端和客户端。
 
 网络方面是用[SparkJava](http://sparkjava.com/"SparkJava")框架进行HTTP的POST和GET。服务器端负责所有的计算以及所有后台操作，客户端则只有图形化界面的显示和根据权限被允许上传生物，上传地图或者看其他生物的基因等功能。
